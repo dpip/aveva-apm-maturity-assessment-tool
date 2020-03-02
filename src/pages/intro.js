@@ -1,7 +1,7 @@
 import React from "react"
 import "../assets/scss/main.scss"
 import { Link } from "gatsby"
-import Background from "../../assets/images/parallax-bg-0.jpg"
+import Background from "../assets/images/parallax-bg-0.jpg"
 import Layout from "../components/layout.js";
 
 export default () =>
