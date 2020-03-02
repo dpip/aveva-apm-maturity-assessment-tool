@@ -20,6 +20,10 @@
     @include character(muli, 16px, regular);
     text-decoration: none;
     cursor: pointer;
+    border:none;
+    &:focus {
+      outline: 0;
+    }
     &.back {
       background-color: inherit;
       border: 2px solid $orange;

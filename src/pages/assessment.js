@@ -12,6 +12,7 @@ class Assessment extends Component {
         this.state = {
             question: 0,
             score: [],
+            total: 0,
             progress: 0,
         };
     }
@@ -39,12 +40,12 @@ class Assessment extends Component {
         if (dir === 'b' && currentQuestion > 0) {
             this.setState({
                 question: back,
-                progress: this.calcPercentage(currentQuestion - 1, 15)
+                progress: this.calcPercentage(currentQuestion - 1, 15),
             })
         } else if (dir === 'n' && next < 15) {
             this.setState({
                 question: next,
-                progress: this.calcPercentage(currentQuestion + 1, 15)
+                progress: this.calcPercentage(currentQuestion + 1, 15),
             })
         } else {
             return (false);
@@ -63,12 +64,12 @@ class Assessment extends Component {
                             <div class="col-sm-12 col-md-9 right">
                                 <p class="question">{Q.question}</p>
                                 {Q.answers.map((answer, index) => (
-                                    <Answer key={index} value={index} text={answer} selected={this.handleAnswer} />
+                                    <Answer key={index} value={answer.val} text={answer.text} selected={this.handleAnswer} />
                                 ))}
                                 <nav>
-                                    <a class="cta back" onClick={e => this.handleNav('b')}>Back</a>
+                                    <button class="cta back" onClick={e => this.handleNav('b')}>Back</button>
 
-                                    <a class="cta" onClick={e => this.handleNav('n')}>Next</a>
+                                    <button class="cta" onClick={e => this.handleNav('n')}>Next</button>
                                 </nav>
                             </div>
                         </div>
