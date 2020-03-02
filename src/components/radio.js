@@ -6,7 +6,7 @@ export default (props) =>
         <label>
             <input
                 type="radio"
-                name="answer"
+                name={props.name}
                 value={props.value}
                 className="form-check-input"
                 onClick={e => props.selected(e, props.value)}
