@@ -14,8 +14,7 @@ class Assessment extends Component {
             score: [],
             total: 0,
             progress: 0,
-            isActive: !false,
-            checked: false,
+            isActive: !false
         };
     }
 
@@ -28,7 +27,6 @@ class Assessment extends Component {
         this.setState({
             score: scoreArray,
             isActive: !true,
-            checked: false
         })
         console.log(this.state.score);
     }
@@ -50,7 +48,7 @@ class Assessment extends Component {
             this.setState({
                 question: next,
                 progress: this.calcPercentage(currentQuestion + 1, 15),
-                isActive: !false
+                isActive: !false,
             })
         } else {
             return (false);
@@ -71,7 +69,7 @@ class Assessment extends Component {
                             <div class="col-sm-12 col-md-9 right">
                                 <p class="question">{Q.question}</p>
                                 {Q.answers.map((answer, index) => (
-                                    <Answer key={index} name={'question' + this.state.question} value={answer.val} text={answer.text} selected={this.handleAnswer} />
+                                    <Answer key={index} value={answer.val} text={answer.text} selected={this.handleAnswer} />
                                 ))}
                                 <nav>
                                     <button class="cta back" onClick={e => this.handleNav('b')}>Back</button>
