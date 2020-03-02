@@ -1,0 +1,140 @@
+{
+    "questions": [
+        {
+            "question": "Do you have key performance indicators (KPIs) to help measure whether or not you’re meeting all of your business objectives (safety, production, quality, consumer safety, costs, etc.)?",
+            "answers": [
+                "We have no key performance indicators (KPIs) to track whether or not we’re meeting our business objectives.",
+                "We have KPIs for some business objectives, but not for all.",
+                "We have KPIs, but only management is fully aware of them.",
+                "We have and actively reference KPIs to track whether or not we’re meeting business objectives. ",
+                "I’m not sure."
+            ]
+        },
+        {
+            "question": "Is your organization able to anticipate and adapt to emerging business trends and new market developments?",
+            "answers": [
+                "There’s no need for that kind of agility in our industry.",
+                "Coordinating change between Maintenance and Operations teams is difficult.",
+                "Our culture is adaptable, but asset criticality must be reassessed to reprioritize anytime we need to change course.",
+                "We have a culture that can adapt to change, backed by streamlined processes, a single source of data, and digital collaboration across departments."
+            ]
+        },
+        {
+            "question": "Are priorities for assets clearly defined, communicated, and tracked across your organization?",
+            "answers": [
+                "We do not have a full view of what our workforce is doing or how they prioritize. Instead, we rely on our department managers to manage priorities.",
+                "We have a collaborative working culture with clear metrics, priorities, and reporting mechanisms.",
+                "We have ranked all of our assets based on criticality, and we have developed deliberate maintenance packages. Our team works according to risk-based priorities.",
+                "We have a single, integrated data hub that provides us with the current live status of our assets’ performance. We can visualize KPIs, actions, and next steps throughout our plant(s)."
+            ]
+        },
+        {
+            "question": "Is your resource utilization (contractors, people capacity, skills, spare parts, etc.) optimally balanced against plant performance?",
+            "answers": [
+                "Our organization lacks overall insight into forecasts, actual costs, and resource usage. There is a high correction rate every month.",
+                "Our cost accounting systems tell us where we are with the overall running costs, but we struggle to get control over budgeting and periodic forecasts.",
+                "Our cost structures provide us with full insight into where money and resources go, but various factors still prevent us from being more predictable and accurate.",
+                "Our resources are allocated and reported through streamlined processes and supported by a single ERP/EAM system. We can balance this against operational risks and actual asset performance to find and resolve differences."
+            ]
+        },
+        {
+            "question": "How do you balance differences between OPEX and CAPEX for your asset base?",
+            "answers": [
+                "We have not assessed overall asset condition against our financial plans. We only refer to cost information at the most general levels.",
+                "Our engineers have a replacement project list, but we have not integrated this insight into our asset life cycle and performance alongside financial reporting.",
+                "We have aligned the assessment of our asset base against our financial planning, current performance, and CAPEX projections for the replacement and refurbishing of end-of-life equipment.",
+                "We have an integrated asset evaluation process and can predict and prioritize our CAPEX/OPEX investment against various risk-based scenarios."
+            ]
+        },
+        {
+            "question": "When it comes to asset performance and optimization, how do you know if your operations and maintenance teams are effectively using data and collaborating?",
+            "answers": [
+                "We are still working in silos, with each team focusing on their specialized areas, and not working across departmental borders yet.",
+                "We share a lot of information and communicate effectively around production schedules and maintenance slots, but our processes and data are not connected across different departments.",
+                "We have structured our data and streamlined our processes, but our systems do not efficiently support and accelerate our workforce.",
+                "We use an integrated digital solution that enables our departments to efficiently access a single data source and work with our assets."
+            ]
+        },
+        {
+            "question": "How do you close the feedback loops in your processes to understand whether your technical workforce is doing the right things, the right way?",
+            "answers": [
+                "We have an experienced workforce and trust that they know what the right actions are for any given asset.",
+                "We have made an inventory of the roles and profiles needed in our organization and have a learning plan to transfer and update knowledge across the team.",
+                "We evaluate our business processes and workforce capabilities from the ground up to develop KPIs for workforce productivity and operational efficiency.",
+                "We share and structure knowledge around our assets and their failure behavior in our systems. Based on integrated digital data, we can detect knowledge gaps in the team as they arise and define prescriptive work packages to support our people."
+            ]
+        },
+        {
+            "question": "How do you measure the condition of your physical assets?",
+            "answers": [
+                "Our expert workforce understands the status of our equipment and the tasks required to maintain it.",
+                "We have data that shows how often some of our key assets fail and what the business consequences are. We evaluate that data periodically and combine it with other data from Operations, Quality, and Safety departments to understand the asset’s operating window.",
+                "We have established an integrated process that records deviations in performance and detects repeated problems across the plant. This information is combined with regular visual walkdowns and deep dives into structural performance problems and major events.",
+                "We have systems that capture and record operations and maintenance data on our key assets, combining it with smart analytics so that we have a complete view of the asset’s performance, from engineering to operations and maintenance."
+            ]
+        },
+        {
+            "question": "Can your organization provide the right data in various supply chain and operational scenarios for informed decision making?",
+            "answers": [
+                "a1",
+                "a2",
+                "a3",
+                "a4"
+            ]
+        },
+        {
+            "question": "How easily can you predict the behavior of your current assets?",
+            "answers": [
+                "a1",
+                "a2",
+                "a3",
+                "a4"
+            ]
+        },
+        {
+            "question": "How do you know if your engineering workforce and your EPC partners are designing assets to drive optimal performance across their life cycle?",
+            "answers": [
+                "a1",
+                "a2",
+                "a3",
+                "a4"
+            ]
+        },
+        {
+            "question": "Is the information in your systems accurate, complete, and synchronized with the physical asset?",
+            "answers": [
+                "a1",
+                "a2",
+                "a3",
+                "a4"
+            ]
+        },
+        {
+            "question": "How do you ensure asset sustainability in your operations?",
+            "answers": [
+                "a1",
+                "a2",
+                "a3",
+                "a4"
+            ]
+        },
+        {
+            "question": "Do you know the long-term benefits and ROI of your digital initiatives up front?",
+            "answers": [
+                "a1",
+                "a2",
+                "a3",
+                "a4"
+            ]
+        },
+        {
+            "question": "Select the option that best describes your company’s perspective on digital transformation.",
+            "answers": [
+                "a1",
+                "a2",
+                "a3",
+                "a4"
+            ]
+        }
+    ]
+}

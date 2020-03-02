@@ -1,0 +1,78 @@
+// A Hassle-Free Way to Self-Host Google Fonts - https://google-webfonts-helper.herokuapp.com/fonts
+@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700|Muli:300,400,500,600,700&display=swap');
+
+@mixin font-weight($weight) {
+  @if $weight == light {
+    font-weight: 300;
+  } @else if $weight == regular {
+    font-weight: 400;
+  } @else if $weight == medium {
+    font-weight: 500;
+  } @else if $weight == semi-bold {
+    font-weight: 600;
+  } @else if $weight == bold {
+    font-weight: 700;
+  } @else {
+    font-weight: 400;
+  }
+}
+
+@mixin character($family, $size, $weight, $line: normal) {
+  @if $family == muli {
+    font-family: $muli;
+  } @else if $family == barlow {
+    font-family: $barlow;
+  }
+  font-size: $size;
+  @include font-weight($weight);
+  line-height: $line;
+}
+
+@mixin heading-5($weight: 400) {
+  font-family: $muli;
+  @include font-weight($weight);
+  line-height: 27px;
+  font-size: 18px;
+}
+
+@mixin heading-4($weight: 400) {
+  font-family: $muli;
+  @include font-weight($weight);
+  line-height: 27px;
+  font-size: 18px;
+}
+
+@mixin heading-3($weight: 400) {
+  font-family: $muli;
+  @include font-weight($weight);
+  line-height: 30px;
+  font-size: 21px;
+}
+
+@mixin heading-2($weight: 400) {
+  font-family: $barlow;
+  @include font-weight($weight);
+  line-height: 55px;
+  font-size: 44px;
+}
+
+@mixin heading-1($weight: 400) {
+  font-family: $barlow;
+  @include font-weight($weight);
+  line-height: 67px;
+  font-size: 56px;
+}
+
+@mixin paragraph($weight: 400) {
+  font-family: $muli;
+  @include font-weight($weight);
+  line-height: 27px;
+  font-size: 18px;
+}
+
+@mixin detail($weight: 400) {
+  font-family: $muli;
+  @include font-weight($weight);
+  line-height: 27px;
+  font-size: 18px;
+}

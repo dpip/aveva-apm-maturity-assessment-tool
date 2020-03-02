@@ -1,0 +1,9 @@
+.answer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    p {
+        padding-left: 1rem;
+        color: $charcoal !important;
+    }
+}

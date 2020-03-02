@@ -1,0 +1,43 @@
+// Colors
+$black: #000;
+$charcoal: #363d42;
+$white: #fff;
+$light-grey: #e3e3e3;
+$medium-grey: #aaaaaa;
+$dark-purple: #3d1152;
+$medium-purple: #6b04a8;
+$light-purple: #c530ff;
+$red: #f70656;
+$yellow: #ffbc00;
+$orange: #ff6c1a;
+
+// Font Family
+$muli: 'Muli', sans-serif;
+$barlow: 'Barlow', sans-serif;
+
+@mixin article-heading-max-width {
+  max-width: 375px;
+  @include media-breakpoint-down(md) {
+    max-width: 100%;
+  }
+}
+
+// Gradients
+@mixin orange-red-gradient {
+  background: #ffbc00;
+  background: -moz-linear-gradient(left, #ffbc00 0%, #f70656 100%);
+  background: -webkit-linear-gradient(left, #ffbc00 0%, #f70656 100%);
+  background: linear-gradient(to right, #ffbc00 0%, #f70656 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbc00', endColorstr='#f70656',GradientType=1 );
+}
+
+@mixin horizontal-rule {
+  height: 3px;
+  width: 100%;
+  max-width: 130px;
+  display: block;
+  @include orange-red-gradient;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 25px;
+  }
+}

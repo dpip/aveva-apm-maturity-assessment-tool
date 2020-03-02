@@ -1,0 +1,51 @@
+.svg-container {
+  display: -webkit-box;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  max-width: 549px;
+  max-height: 549px;
+  transform: translateX(-50%);
+  left: 50%;
+  position: relative;
+  @include media-breakpoint-down(xs) {
+    height: 97%;
+    width: 97%;
+  }
+}
+
+.svg-container > * {
+  margin: auto;
+}
+
+.svg-container svg {
+  height: 100%;
+  width: 80vh;
+}
+/* end code for this layout only */
+
+/* Asset specific */
+.background {
+  fill: #442856;
+}
+
+.point,
+.icon {
+  display: none;
+}
+
+.slice:hover .background {
+  fill: #6b04a8;
+}
+
+.slice:hover .point {
+  display: block;
+}
+
+.slice:hover .icon {
+  display: block;
+}
+
+.slice:hover .dot circle {
+  fill: #fff;
+}
