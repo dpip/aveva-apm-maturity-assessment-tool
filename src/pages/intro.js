@@ -18,7 +18,7 @@ export default () =>
                     </div>
                     <div className="col-sm-12 col-md-6 right">
                         <p>Form code TBD</p>
-                        <Link className="cta" to="/assessment">Take the assessment</Link>
+                        <Link className="cta" to="/assessment/">Take the assessment</Link>
                     </div>
                 </div>
             </div>
