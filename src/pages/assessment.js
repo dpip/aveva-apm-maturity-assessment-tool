@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import "../assets/scss/main.scss"
-import Answer from "../components/answer.js"
 import Layout from "../components/layout.js"
+import Progress from "../components/progress.js"
+import Answer from "../components/answer.js"
 import Content from "../content/content.json";
 
 
@@ -11,6 +12,7 @@ class Assessment extends Component {
         this.state = {
             question: 0,
             score: [],
+            progress: 0,
         };
     }
 
@@ -26,18 +28,24 @@ class Assessment extends Component {
         console.log(this.state.score);
     }
 
+    calcPercentage = (partialVal, totalVal) => {
+        return (100 * partialVal) / totalVal;
+    }
+
     handleNav = (dir) => {
         let currentQuestion = this.state.question;
-        if (dir === 'b') {
+        let back = currentQuestion - 1;
+        let next = currentQuestion + 1;
+        if (dir === 'b' && currentQuestion > 0) {
             this.setState({
-                question: currentQuestion - 1
+                question: back,
+                progress: this.calcPercentage(currentQuestion - 1, 15)
             })
-            console.log(currentQuestion)
-        } else if (dir === 'n') {
+        } else if (dir === 'n' && next < 15) {
             this.setState({
-                question: currentQuestion + 1
+                question: next,
+                progress: this.calcPercentage(currentQuestion + 1, 15)
             })
-            console.log(currentQuestion)
         } else {
             return (false);
         }
@@ -47,12 +55,11 @@ class Assessment extends Component {
         const Q = Content.questions[this.state.question];
         return (
             <Layout>
+                <Progress fill={this.state.progress} />
                 <article class="container--assessment">
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-12 col-md-3 left">
-
-                            </div>
+                            <div class="col-sm-12 col-md-3 left" />
                             <div class="col-sm-12 col-md-9 right">
                                 <p class="question">{Q.question}</p>
                                 {Q.answers.map((answer, index) => (
