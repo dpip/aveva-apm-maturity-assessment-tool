@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import { Link } from "gatsby"
+
 import "../assets/scss/main.scss"
 import Layout from "../components/layout.js"
 import Progress from "../components/progress.js"
@@ -14,7 +16,8 @@ class Assessment extends Component {
             score: [],
             total: 0,
             progress: 0,
-            isActive: !false
+            isActive: !false,
+            checked: null
         };
     }
 
@@ -26,19 +29,42 @@ class Assessment extends Component {
         scoreArray[question] = val;
         this.setState({
             score: scoreArray,
-            isActive: !true,
+            isActive: !true
         })
-        console.log(this.state.score);
+
     }
 
     calcPercentage = (partialVal, totalVal) => {
         return (100 * partialVal) / totalVal;
     }
 
+    calcTotal = (score) => {
+        score.reduce(function (a, b) { return a + b; }, 0)
+    }
+
+    handleResult = () => {
+        let result = Math.round((this.state.total / 60) * 100);
+        if (result <= 15) {
+            return 0;
+        } else if (result >= 0 && result <= 15) {
+            return 1;
+        } else if (result >= 16 && result <= 25) {
+            return 2;
+        } else if (result >= 26 && result <= 40) {
+            return 3;
+        } else if (result >= 40 && result <= 45) {
+            return 4;
+        } else {
+            return 5;
+        }
+
+    }
+
     handleNav = (dir) => {
         let currentQuestion = this.state.question;
         let back = currentQuestion - 1;
         let next = currentQuestion + 1;
+
         if (dir === 'b' && currentQuestion > 0) {
             this.setState({
                 question: back,
@@ -49,7 +75,10 @@ class Assessment extends Component {
                 question: next,
                 progress: this.calcPercentage(currentQuestion + 1, 15),
                 isActive: !false,
+                checked: null,
+                total: this.state.score.reduce(function (a, b) { return a + b; }, 0)
             })
+            console.log('score', this.state.score.reduce(function (a, b) { return a + b; }, 0))
         } else {
             return (false);
         }
@@ -69,18 +98,17 @@ class Assessment extends Component {
                             <div class="col-sm-12 col-md-9 right">
                                 <p class="question">{Q.question}</p>
                                 {Q.answers.map((answer, index) => (
-                                    <Answer key={index} value={answer.val} text={answer.text} selected={this.handleAnswer} />
+                                    <Answer key={index} value={answer.val} text={answer.text} selected={this.handleAnswer} checked={this.state.checked} name={'question-' + this.state.question} />
                                 ))}
                                 <nav>
                                     <button class="cta back" onClick={e => this.handleNav('b')}>Back</button>
-
-                                    <button class="cta" disabled={this.state.isActive} onClick={e => this.handleNav('n')}>Next</button>
+                                    {this.state.question === 14 ? <Link to={'/results'} state={{ result: Math.round((this.state.total / 60) * 100) }} class="cta" disabled={this.state.isActive} onClick={e => this.handleNav('n')}>Results</Link> : <button class="cta" disabled={this.state.isActive} onClick={e => this.handleNav('n')}>Next</button>}
                                 </nav>
                             </div>
                         </div>
                     </div>
                 </article>
-            </Layout>
+            </Layout >
         );
     }
 }
