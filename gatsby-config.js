@@ -5,5 +5,6 @@
  */
 
 module.exports = {
-  plugins: [`gatsby-plugin-sass`, `gatsby-plugin-react-helmet`, `gatsby-plugin-htaccess`, `gatsby-transformer-sharp`, `gatsby-plugin-sharp`]
+  plugins: [`gatsby-plugin-sass`, `gatsby-plugin-react-helmet`, `gatsby-plugin-htaccess`, `gatsby-transformer-sharp`, `gatsby-plugin-sharp`],
+  pathPrefix: `/assets`,
 }
