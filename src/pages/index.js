@@ -10,7 +10,7 @@ export default () =>
 
     <div>
         <Router>
-            <Intro path={withPrefix('/')} />
-            <Assessment path={withPrefix('/assessment')} />
+            <Intro path={'/'} />
+            <Assessment path={'/assessment'} />
         </Router>
     </div>
