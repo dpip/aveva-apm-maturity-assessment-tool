@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{RXBc:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),l=a.n(n),u=(a("Wbzz"),a("wcMv"),a("fFGV")),c=a("fOM+"),r=a("0YtT"),s=a("YwZP");t.default=function(){return l.a.createElement("div",null,l.a.createElement(s.Router,null,l.a.createElement(u.default,{path:"/"}),l.a.createElement(c.default,{path:"/assessment"}),l.a.createElement(r.default,{path:"/results"})))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-bc1115abd1147a350d42.js.map
