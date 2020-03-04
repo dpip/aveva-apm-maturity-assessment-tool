@@ -5,13 +5,13 @@ export default (props) =>
     <div class="radio">
         <input
             type="radio"
-            name={`${props.name}`}
+            name={`${props.radioid}`}
             value={props.value}
             className="myradio__input"
             onChange={e => props.selected(e, props.value, props.radioid)}
             checked={props.checked === props.radioid}
         />
-        <label for={`${props.name}`} className="myradio__label" />
+        <label for={`${props.radioid}`} className="myradio__label" />
     </div>
 
 
