@@ -1,19 +1,13 @@
 import React from "react"
 import Layout from "../components/layout.js"
 import Results from "../content/results.json";
-import { getSearchParams } from "gatsby-query-params";
-
 import Background from "../assets/images/parallax-bg-0.jpg"
 import "../assets/scss/main.scss"
 
-const handleResult = () => {
-    // console.log(Number(getSearchParams().Result))
-    const params = getSearchParams();
-    const pct = Number(params.Result);
-    const content = Number(params.Content);
-    return [pct, content];
+const getParameterByName = (name) => {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
-
 
 export default ({ location }) =>
     <Layout>
@@ -26,9 +20,8 @@ export default ({ location }) =>
                         {(location.state && location.state.result) ?
                             <h2>{location.state.result}&nbsp;%</h2>
                             :
-                            <h2>{handleResult()[0]}&nbsp;%</h2>
+                            <h2>{Number(getParameterByName('Result'))}&nbsp;%</h2>
                         }
-
                         <span className="rule"></span>
                     </div>
                     <div className="col-sm-12 col-md-9 right">
@@ -36,7 +29,7 @@ export default ({ location }) =>
                         {(location.state && location.state.resultcontent) ?
                             <p dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }}></p>
                             :
-                            <p dangerouslySetInnerHTML={{ __html: Results.results[handleResult()[1]] }}></p>
+                            <p dangerouslySetInnerHTML={{ __html: Results.results[Number(getParameterByName('Content'))] }}></p>
                         }
                     </div>
                 </div>
