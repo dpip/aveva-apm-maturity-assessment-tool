@@ -16,7 +16,7 @@ export default ({ location }) =>
                         <span className="rule"></span>
                     </div>
                     <div className="col-sm-12 col-md-9 right">
-                        <p dangerouslySetInnerHTML={{ __html: Results.results[0] }}></p>
+                        <p dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }}></p>
                     </div>
                 </div>
             </div>
