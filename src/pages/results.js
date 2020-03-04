@@ -12,11 +12,15 @@ export default ({ location }) =>
                 <div className="row">
                     <div className="col-sm-12 col-md-3 left">
                         <h4 style={{ color: "#FFFF" }}>Your APM maturity<br /> assessment score is</h4>
-                        {/* <h2>{location.state.result}&nbsp;%</h2> */}
+                        {(location.state && location.state.result) &&
+                            <h2>{location.state.result}&nbsp;%</h2>
+                        }
                         <span className="rule"></span>
                     </div>
                     <div className="col-sm-12 col-md-9 right">
-                        {/* <p dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }}></p> */}
+                        {(location.state && location.state.resultcontent) &&
+                            <p dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }}></p>
+                        }
                     </div>
                 </div>
             </div>

@@ -6,5 +6,5 @@
 
 module.exports = {
   plugins: [`gatsby-plugin-sass`, `gatsby-plugin-react-helmet`, `gatsby-plugin-htaccess`, `gatsby-transformer-sharp`, `gatsby-plugin-sharp`],
-  pathPrefix: `/`,
+  pathPrefix: `/9541/`,
 }
