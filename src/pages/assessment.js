@@ -1,11 +1,11 @@
 import React, { Component } from "react"
-import { Link } from "gatsby"
 
 import "../assets/scss/main.scss"
 import Layout from "../components/layout.js"
 import Progress from "../components/progress.js"
 import Answer from "../components/answer.js"
 import Content from "../content/content.json";
+import BottomNav from "../components/bottomNav.js"
 
 
 class Assessment extends Component {
@@ -21,17 +21,18 @@ class Assessment extends Component {
         };
     }
 
-    handleAnswer = (e, val) => {
-        console.log(e, val);
+
+
+    handleAnswer = (e, val, radioid) => {
         let question = this.state.question;
         let score = this.state.score;
         let scoreArray = score.slice();
         scoreArray[question] = val;
         this.setState({
             score: scoreArray,
-            isActive: !true
+            isActive: !true,
+            checked: radioid,
         })
-
     }
 
     calcPercentage = (partialVal, totalVal) => {
@@ -65,43 +66,39 @@ class Assessment extends Component {
             this.setState({
                 question: back,
                 progress: this.calcPercentage(currentQuestion - 1, 15),
+                checked: null
             })
         } else if (dir === 'n' && next < 15) {
             this.setState({
                 question: next,
                 progress: this.calcPercentage(currentQuestion + 1, 15),
                 isActive: !false,
-                checked: null,
                 total: this.state.score.reduce(function (a, b) { return a + b; }, 0),
-                result: this.handleResult()
+                result: this.handleResult(),
+                checked: null
             })
-            console.log('score', this.state.score.reduce(function (a, b) { return a + b; }, 0))
         } else {
             return (false);
         }
-        console.log(this.handleResult)
+
     }
 
     render() {
         const Q = Content.questions[this.state.question];
-        const current = this.state.question;
-        console.log(this.state.question);
+
         return (
             <Layout>
                 <Progress fill={this.state.progress} />
-                <article class="container--assessment">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-3 left" />
-                            <div class="col-sm-12 col-md-9 right">
-                                <p class="question">{Q.question}</p>
+                <article className="container--assessment">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-12 col-md-3 left" />
+                            <div className="col-sm-12 col-md-9 right">
+                                <p className="question">{Q.question}</p>
                                 {Q.answers.map((answer, index) => (
-                                    <Answer key={index} value={answer.val} text={answer.text} selected={this.handleAnswer} checked={this.state.checked} name={'question-' + this.state.question} />
+                                    <Answer key={index} radioid={this.state.question + '-' + index} value={answer.val} text={answer.text} selected={this.handleAnswer} checked={this.state.checked} name={'question-' + this.state.question} />
                                 ))}
-                                <nav>
-                                    <button class="cta back" onClick={e => this.handleNav('b')}>Back</button>
-                                    {this.state.question === 14 ? <Link to={'/results'} state={{ result: Math.round((this.state.total / 60) * 100), resultcontent: this.handleResult() }} class="cta" disabled={this.state.isActive} onClick={e => this.handleNav('n')}>Results</Link> : <button class="cta" disabled={this.state.isActive} onClick={e => this.handleNav('n')}>Next</button>}
-                                </nav>
+                                <BottomNav question={this.state.question} handleNav={this.handleNav} result={Math.round((this.state.total / 60) * 100)} content={this.handleResult()} active={this.state.isActive} />
                             </div>
                         </div>
                     </div>

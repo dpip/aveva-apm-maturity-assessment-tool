@@ -7,6 +7,6 @@ export default (props) =>
         name={`${props.name}`}
         value={props.value}
         className="form-check-input"
-        // onClick={e => props.selected(e, props.value)}
-        checked={props.checked}
+        onChange={e => props.selected(e, props.value, props.radioid)}
+        checked={props.checked === props.radioid}
     />
