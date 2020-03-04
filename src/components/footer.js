@@ -87,22 +87,22 @@ export default () => <footer id="bottom">
                             <p>Connect</p>
                             <ul className="se-footer-item--social-icons">
                                 <li className="has-link-over">
-                                    <a target="_blank" href="https://www.facebook.com/avevasolutions" className="link-over"></a>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/avevasolutions" className="link-over"></a>
                                     <img alt="facebook icon"
                                         src="https://sw.aveva.com/hubfs/assets-2018/images/icons/logo-social-facebook.png" />
                                 </li>
                                 <li className="has-link-over">
-                                    <a target="_blank" href="https://twitter.com/AVEVAGroup" className="link-over"></a>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/AVEVAGroup" className="link-over"></a>
                                     <img alt="twitter icon"
                                         src="https://sw.aveva.com/hubfs/assets-2018/images/icons/logo-social-twitter.png" />
                                 </li>
                                 <li className="has-link-over">
-                                    <a target="_blank" href="http://www.linkedin.com/company/aveva" className="link-over"></a>
+                                    <a target="_blank" rel="noopener noreferrer" href="http://www.linkedin.com/company/aveva" className="link-over"></a>
                                     <img alt="linkedin icon"
                                         src="https://sw.aveva.com/hubfs/assets-2018/images/icons/logo-social-linkedin.png" />
                                 </li>
                                 <li className="has-link-over">
-                                    <a target="_blank" href="http://www.youtube.com/avevagroup" className="link-over"></a>
+                                    <a target="_blank" rel="noopener noreferrer" href="http://www.youtube.com/avevagroup" className="link-over"></a>
                                     <img alt="youtube icon"
                                         src="https://sw.aveva.com/hubfs/assets-2018/images/icons/logo-social-youtube.png" />
                                 </li>

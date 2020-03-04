@@ -22,7 +22,7 @@ export default (props) =>
         {
             props.question === 14 ?
                 <Link
-                    to={'/results'}
+                    to={'/results' + `?Result=${props.result}&Content=${props.content}`}
                     state={{ result: props.result, resultcontent: props.content }}
                     className="cta"
                     disabled={props.active}

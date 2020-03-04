@@ -21,8 +21,6 @@ class Assessment extends Component {
         };
     }
 
-
-
     handleAnswer = (e, val, radioid) => {
         let question = this.state.question;
         let score = this.state.score;
