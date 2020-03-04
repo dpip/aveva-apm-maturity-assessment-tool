@@ -5,7 +5,8 @@ import Background from "../assets/images/parallax-bg-0.jpg"
 import "../assets/scss/main.scss"
 
 const getParameterByName = (name) => {
-    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    // typeof window !== 'undefined' && window.location.search
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(typeof window !== 'undefined' && window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
