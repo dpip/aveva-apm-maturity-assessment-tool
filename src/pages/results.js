@@ -22,11 +22,12 @@ export default ({ location }) =>
                     </div>
                     <div className="col-sm-12 col-md-8 right">
 
-                        {(location.state && location.state.resultcontent) ?
+                        {/* {(location.state && location.state.resultcontent) ?
                             <p dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }}></p>
                             :
                             <p dangerouslySetInnerHTML={{ __html: Results.results[Number(getParameterByName('Content'))] }}></p>
-                        }
+                        } */}
+                        <p dangerouslySetInnerHTML={{ __html: Results.results[Number(getParameterByName('Content'))] }}></p>
                     </div>
                 </div>
             </div>
