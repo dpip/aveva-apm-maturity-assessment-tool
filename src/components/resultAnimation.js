@@ -11,10 +11,9 @@ export default (props) =>
         <div className="result-pie">
             <h4>Your APM maturity<br /> assessment score is</h4>
             <h2>{props.result}%</h2>
-            {/* <svg width="100" height="100" class="chart">
-                <circle r="25" cx="50" cy="50" fill="red" stroke-dasharray={30} />
+            {/* <svg viewBox="0 0 100 100" class="chart">
+                <circle stroke={'blue'} r="50" cx="50" cy="50" className="pie" strokeDasharray={70} />
             </svg> */}
-            {/* {console.log((props.result * 100) / 158)} */}
         </div>
         <div className="bottom-container">
             <ul className="over">

@@ -18,16 +18,19 @@ export default ({ location }) =>
             <div className="container results">
                 <div className="row">
                     <div className="col-sm-12 col-md-4 left results-col">
-                        <Animation result={Number(getParameterByName('Result'))} bracket={Number(getParameterByName('Content'))} />
+                        {(location.state && location.state.result) ?
+                            <Animation result={Number(location.state.result)} bracket={Number(location.state.content)} />
+                            :
+                            <Animation result={Number(getParameterByName('Result'))} bracket={Number(getParameterByName('Content'))} />
+                        }
                     </div>
                     <div className="col-sm-12 col-md-8 right">
 
-                        {/* {(location.state && location.state.resultcontent) ?
+                        {(location.state && location.state.resultcontent) ?
                             <p dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }}></p>
                             :
                             <p dangerouslySetInnerHTML={{ __html: Results.results[Number(getParameterByName('Content'))] }}></p>
-                        } */}
-                        <p dangerouslySetInnerHTML={{ __html: Results.results[Number(getParameterByName('Content'))] }}></p>
+                        }
                     </div>
                 </div>
             </div>
