@@ -1,0 +1,108 @@
+.results-col {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.result-animation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100%;
+    .result-pie {
+        height: 250px;
+        width: 250px;
+        border-radius: 100%;
+        background-color: $charcoal;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h4 {
+            color: $yellow;
+            margin-bottom: 0px !important;
+        }
+        h2 {
+            color: $white;
+            font-size: 5rem;
+        }
+    }
+    .bottom-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: 300px;
+        background-image: linear-gradient( rgba(54, 61, 66, 0.1), rgba(107, 4, 168, 0.5));
+        padding-bottom: 60px;
+        position: relative;
+        .over {
+            z-index: 300;
+        }
+        #underlay {
+            position: absolute;
+            z-index: 0;
+            width: 300px;
+            height: 0px;
+            background-color: $dark-purple;
+            bottom: 0;
+            transition: all 1s ease-in;
+            &.u0 {
+                height: 75%;
+            }
+            &.u1 {
+                height: 80%;
+            }
+            &.u2 {
+                height: 88%;
+            }
+            &.u3 {
+                height: 95%;
+            }
+            
+        }
+        ul {
+        list-style-type: none;
+        padding: 0px;
+        position: relative;
+        
+        
+        li {
+            color: $medium-purple;
+            padding: 10px 0px 0px 0px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.active {
+                color: $yellow;
+                font-size: 1.25rem;
+            }
+        }
+        .dots {
+            display: flex;
+            flex-wrap: wrap;
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            div {
+                height: 5px;
+                width: 5px;
+                background-color: $yellow;
+                border-radius: 100%;
+                margin: 1px;
+            }
+        }
+        
+    }
+    h1 {
+        padding: 60px 0px 20px 0px;
+        color: $white;
+        text-align: center;
+    }
+ } 
+}

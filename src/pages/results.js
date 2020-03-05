@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout.js"
 import Results from "../content/results.json";
+import Animation from "../components/resultAnimation.js";
 import Background from "../assets/images/parallax-bg-0.jpg"
 import "../assets/scss/main.scss"
 
@@ -16,16 +17,14 @@ export default ({ location }) =>
             <img alt="Slide 0 Background Image" className="jarallax-img" src={Background} />
             <div className="container results">
                 <div className="row">
-                    <div className="col-sm-12 col-md-3 left">
-                        <h4 style={{ color: "#FFFF" }}>Your APM maturity<br /> assessment score is</h4>
+                    <div className="col-sm-12 col-md-4 left results-col">
                         {(location.state && location.state.result) ?
-                            <h2 style={{ fontSize: '5rem' }}>{location.state.result}&nbsp;%</h2>
+                            <Animation result={Number(location.state.result)} bracket={location.state.content} />
                             :
-                            <h2 style={{ fontSize: '5rem' }}>{Number(getParameterByName('Result'))}&nbsp;%</h2>
+                            <Animation result={Number(getParameterByName('Result'))} bracket={Number(getParameterByName('Content'))} />
                         }
-                        <span className="rule"></span>
                     </div>
-                    <div className="col-sm-12 col-md-9 right">
+                    <div className="col-sm-12 col-md-8 right">
 
                         {(location.state && location.state.resultcontent) ?
                             <p dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }}></p>
