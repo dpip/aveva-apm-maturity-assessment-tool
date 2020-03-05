@@ -18,11 +18,7 @@ export default ({ location }) =>
             <div className="container results">
                 <div className="row">
                     <div className="col-sm-12 col-md-4 left results-col">
-                        {(location.state && location.state.result) ?
-                            <Animation result={Number(location.state.result)} bracket={location.state.content} />
-                            :
-                            <Animation result={Number(getParameterByName('Result'))} bracket={Number(getParameterByName('Content'))} />
-                        }
+                        <Animation result={Number(getParameterByName('Result'))} bracket={Number(getParameterByName('Content'))} />
                     </div>
                     <div className="col-sm-12 col-md-8 right">
 
