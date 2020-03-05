@@ -19,9 +19,9 @@ export default ({ location }) =>
                     <div className="col-sm-12 col-md-3 left">
                         <h4 style={{ color: "#FFFF" }}>Your APM maturity<br /> assessment score is</h4>
                         {(location.state && location.state.result) ?
-                            <h2>{location.state.result}&nbsp;%</h2>
+                            <h2 style={{ fontSize: '5rem' }}>{location.state.result}&nbsp;%</h2>
                             :
-                            <h2>{Number(getParameterByName('Result'))}&nbsp;%</h2>
+                            <h2 style={{ fontSize: '5rem' }}>{Number(getParameterByName('Result'))}&nbsp;%</h2>
                         }
                         <span className="rule"></span>
                     </div>

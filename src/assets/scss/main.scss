@@ -14,22 +14,35 @@
 .cta {
     display: block;
     color: $white;
-    background-color: $orange;
+    background-color: $red;
     max-width: max-content;
     padding: 10px 15px;
     @include character(muli, 16px, regular);
     text-decoration: none;
     cursor: pointer;
     border:none;
+    transition: all .15s ease-in-out;
+    &:hover {
+      background-color: $medium-purple;
+      color: $white !important;
+    }
     &:focus {
       outline: 0;
     }
     &.back {
       background-color: inherit;
-      border: 2px solid $orange;
-      color: $orange;
+      border: 2px solid $red;
+      color: $red;
       margin-right: 10px;
+      &:hover {
+        border: 2px solid $medium-purple;
+        color: $medium-purple !important;
+      }
     }
+}
+
+.results-title {
+  color: $yellow !important;
 }
 
 .container--assessment {
