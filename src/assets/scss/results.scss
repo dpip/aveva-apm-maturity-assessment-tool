@@ -1,9 +1,3 @@
-.results-col {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
 .result-animation {
     display: flex;
     flex-direction: column;
@@ -11,13 +5,29 @@
     align-items: center;
     width: 300px;
     height: 100%;
+    position: relative;
+    margin: 0 auto;
+
+    @media (min-width: 1000px) {
+      margin: 0;
+    }
+
+    &:after {
+      background-color: $dark-purple;
+      bottom: 0;
+      content: '';
+      height: 80%;
+      left: 0;
+      opacity: 0.5;
+      position: absolute;
+      right: 0;
+      top: 20%;
+      z-index: -1;
+    }
+
+
+
     .result-pie {
-        height: 250px;
-        width: 250px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         h4 {
             color: $yellow;
             margin-bottom: 0px !important;
@@ -34,7 +44,6 @@
         align-items: center;
         height: auto;
         width: 300px;
-        background-image: linear-gradient( rgba(54, 61, 66, 0.1), rgba(107, 4, 168, 0.5));
         padding-bottom: 60px;
         position: relative;
         .over {
@@ -49,17 +58,17 @@
             bottom: 0;
             transition: all 1s ease-in;
             &.u0 {
-                height: 75%;
+                height: 69%;
                 animation-name: u0;
                 animation-duration: 1s;
             }
             &.u1 {
-                height: 80%;
+                height: 78%;
                 animation-name: u1;
                 animation-duration: 1s;
             }
             &.u2 {
-                height: 88%;
+                height: 86%;
                 animation-name: u2;
                 animation-duration: 1s;
             }
@@ -67,7 +76,7 @@
                 height: 95%;
                 animation-name: u3;
                 animation-duration: 1s;
-            }  
+            }
         }
         @keyframes u0 {
             0% {
@@ -101,15 +110,14 @@
         list-style-type: none;
         padding: 0px;
         position: relative;
-        
-        
+
+
         li {
             color: $medium-purple;
             padding: 10px 0px 0px 0px;
             font-size: 1rem;
             display: flex;
             align-items: center;
-            justify-content: center;
 
             &.active {
                 color: $yellow;
@@ -130,101 +138,54 @@
                 margin: 1px;
             }
         }
-        
+
     }
     h1 {
         padding: 60px 0px 20px 0px;
         color: $white;
         text-align: center;
     }
- } 
+ }
 }
 
-figure {
-//   background-color: #eee;
-  display: block;
-  height: 0;
-  margin: 0 auto;
+.result-pie {
+  height: 100%;
   position: relative;
-  font-size:16px;
-  font-size:1vw;
   width: 100%;
-  padding-bottom: 40em;
+
+  svg {
+
+    circle {
+      transition: all 700ms ease-in-out;
+      transform-origin: center center;
+    }
+  }
+
+  .result-content {
+    left: 0;
+    padding: 0 1em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+
+    p {
+      font-family: Barlow;
+      line-height: 1.2;
+      margin: 0;
+
+    }
+
+    p:first-child {
+      color: $yellow;
+      font-size: 24px;
+      font-weight: lighter;
+    }
+
+    p:nth-child(2) {
+      color: $white;
+      font-size: 6em;
+    }
+  }
 }
-
-// svg {
-//   display: block;
-//   height: 100%;
-//   width: 100%;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   overflow: visible;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   transform: rotate(90deg);
-// }
-// circle {
-// 	fill:rgba(0,0,0,0);
-//   stroke-width:31.8309886184;
-//   stroke-dasharray: 0,0,0,100;
-//   stroke-dashoffset: 25;
-//   -webkit-animation: pie1 3s ease both;
-//   animation: pie1 6s ease both;
-// }
-// .pie0 {
-//   stroke:hsl(180,70%,30%);
-// }
-// .pie1 {
-//   stroke:hsl(180,70%,50%);
-//   -webkit-animation-name: pie2;
-//   animation-name: pie2;
-// }
-// .pie2 {
-//   stroke:hsl(180,70%,20%);
-//   -webkit-animation-name: pie3;
-//   animation-name: pie3;
-// }
-// .pie3 {
-//   stroke:hsl(180,0%,70%);
-//   -webkit-animation-name: pie4;
-//   animation-name: pie4;
-// }
-// /*
-//  pie percentage made by stroke-dasharray.
-//  stroke-dasharray format is...
-
-//  keyframe 100% : 0 offset this-percentage rest
-
-//  I added keyframe 50% for infinite presentation.
-// */
-
-// /* 1st pie is 40% */
-// @-webkit-keyframes pie1 {
-//   50%,100% {stroke-dasharray: 40,60,0,0;}
-// }
-// @keyframes pie1 {
-//   50%,100% {stroke-dasharray: 40,60,0,0;}
-// }
-// /* 2nd pie is 30% */
-// @-webkit-keyframes pie2 {
-//   50%,100% {stroke-dasharray: 0,40,30,30;}
-// }
-// @keyframes pie2 {
-//   50%,100% {stroke-dasharray: 0,40,30,30;}
-// }
-// /* 3rd pie is 30% */
-// @-webkit-keyframes pie3 {
-//   50%,100% {stroke-dasharray: 0,70,20,10;}
-// }
-// @keyframes pie3 {
-//   50%,100% {stroke-dasharray: 0,70,20,10;}
-// }
-// /* 4th pie is 10% */
-// @-webkit-keyframes pie4 {
-//   50%,100% {stroke-dasharray: 0,90,10,0;}
-// }
-// @keyframes pie4 {
-//   50%,100% {stroke-dasharray: 0,90,10,0;}
-// }

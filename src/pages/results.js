@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout.js"
 import Results from "../content/results.json";
-import Animation from "../components/resultAnimation.js";
+import Chart from "../components/resultAnimation";
 import Background from "../assets/images/parallax-bg-0.jpg"
 import "../assets/scss/main.scss"
 
@@ -19,9 +19,9 @@ export default ({ location }) =>
                 <div className="row">
                     <div className="col-sm-12 col-md-4 left results-col">
                         {(location.state && location.state.result) ?
-                            <Animation result={Number(location.state.result)} bracket={Number(location.state.content)} />
+                            <Chart result={Number(location.state.result)} bracket={Number(location.state.content)} />
                             :
-                            <Animation result={Number(getParameterByName('Result'))} bracket={Number(getParameterByName('Content'))} />
+                            <Chart result={Number(getParameterByName('Result'))} bracket={Number(getParameterByName('Content'))} />
                         }
                     </div>
                     <div className="col-sm-12 col-md-8 right">
