@@ -9,11 +9,14 @@ export default (props) =>
 
     <div className="result-animation">
         <div className="result-pie">
-            <h4>Your APM maturity<br /> assessment score is</h4>
-            <h2>{props.result}%</h2>
-            {/* <svg viewBox="0 0 100 100" class="chart">
-                <circle stroke={'blue'} r="50" cx="50" cy="50" className="pie" strokeDasharray={70} />
-            </svg> */}
+            {/* <h4>Your APM maturity<br /> assessment score is</h4>
+            <h2>{props.result}%</h2> */}
+            {/* {props.bracket} */}
+            <figure>
+                <svg viewBox="0 0 100 100">
+                    <circle class="pie0" cx="31.8309886184" cy="31.8309886184" r="15.9154943092" />
+                </svg>
+            </figure>
         </div>
         <div className="bottom-container">
             <ul className="over">
