@@ -18,8 +18,8 @@ export default ({ location }) =>
             <div className="container results">
                 <div className="row">
                     <div className="col-sm-12 col-md-4 left results-col">
-                        {(location.state && location.state.result) ?
-                            <Chart result={Number(location.state.result)} bracket={Number(location.state.content)} />
+                        {(location.state && location.state.resultcontent) ?
+                            <Chart result={Number(location.state.result)} bracket={Number(location.state.resultcontent)} />
                             :
                             <Chart result={Number(getParameterByName('Result'))} bracket={Number(getParameterByName('Content'))} />
                         }

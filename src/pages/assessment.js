@@ -78,7 +78,7 @@ class Assessment extends Component {
         } else {
             return (false);
         }
-
+        console.log('results bucket', this.state.result)
     }
 
     render() {
@@ -96,7 +96,7 @@ class Assessment extends Component {
                                 {Q.answers.map((answer, index) => (
                                     <Answer key={index} radioid={this.state.question + '-' + index} value={answer.val} text={answer.text} selected={this.handleAnswer} checked={this.state.checked} name={'question-' + this.state.question} />
                                 ))}
-                                <BottomNav question={this.state.question} handleNav={this.handleNav} result={Math.round((this.state.total / 60) * 100)} content={this.handleResult()} active={this.state.isActive} />
+                                <BottomNav question={this.state.question} handleNav={this.handleNav} result={Math.round((this.state.total / 60) * 100)} content={this.state.result} active={this.state.isActive} />
                             </div>
                         </div>
                     </div>
