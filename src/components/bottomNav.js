@@ -21,7 +21,7 @@ export default (props) =>
             </button>
         }
         {
-            props.question === 5 ?
+            props.question === 14 ?
                 <Link
                     to={'/results' + `?Result=${props.result}&Content=${props.content}`}
                     state={{ result: props.result, resultcontent: props.content }}
