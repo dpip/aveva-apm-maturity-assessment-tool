@@ -105,7 +105,12 @@
         list-style-type: none;
         padding: 0px;
         position: relative;
-
+        opacity: 0;
+        transform: translateY(0px);
+        animation-name: contentFadeup;
+        animation-delay: 1s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
 
         li {
             color: $medium-purple;
@@ -133,6 +138,7 @@
                 margin: 1px;
             }
         }
+        
 
     }
     h1 {
@@ -195,4 +201,33 @@
         opacity: 1;
       }
   }
+  @keyframes contentFadeup {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+  }
+
 }
+
+
+        .in {
+            opacity: 0;
+            transform: translateY(0px);
+            animation-name: contentFadeup;
+            animation-delay: 2s;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes contentFadeup {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }

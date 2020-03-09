@@ -85,9 +85,9 @@ const Chart = (props) => {
                         Take APM to the next level
                         </li>
                 </ul>
-                <h2 className="over"
+                <h2 className="over in"
                     style={{ fontSize: `1.25em`, lineHeight: 1.2, textAlign: `center`, padding: `1em 0.5em 0` }}>Learn what you can do to improve your results.</h2>
-                <a className="cta over" href="#" target="_blank">Contact an expert</a>
+                <a className="cta over in" href="#" target="_blank">Contact an expert</a>
                 <div id={'underlay'} className={'u' + props.bracket} />
             </div>
         </div>
