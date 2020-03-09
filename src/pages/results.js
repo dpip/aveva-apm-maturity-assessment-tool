@@ -27,9 +27,9 @@ export default ({ location }) =>
                     <div className="col-sm-12 col-md-8 right">
 
                         {(location.state && location.state.resultcontent) ?
-                            <p dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }}></p>
+                            <div style={{ color: '#fff' }} dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }} />
                             :
-                            <p dangerouslySetInnerHTML={{ __html: Results.results[Number(getParameterByName('Content'))] }}></p>
+                            <div style={{ color: '#fff' }} dangerouslySetInnerHTML={{ __html: Results.results[Number(getParameterByName('Content'))] }} />
                         }
                     </div>
                 </div>
