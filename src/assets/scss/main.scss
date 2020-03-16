@@ -12,6 +12,22 @@
 @import "./progress";
 @import "./results";
 @import "./form";
+@import "./alert";
+
+
+h1 {
+  @include heading-1(light);
+}
+h2 {
+  @include heading-2(light);
+}
+h3 {
+  @include heading-3(light);
+}
+h4 {
+  @include heading-4(light);
+}
+
 
 .cta {
     display: block;
@@ -45,10 +61,10 @@
         color: white !important;
       }
     }
-}
-
-.results-title {
-  color: $yellow !important;
+    &.disabled-true {
+      background-color: #B1C1CD;
+      cursor: not-allowed;
+    }
 }
 
 .container--assessment {

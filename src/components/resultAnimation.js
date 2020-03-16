@@ -86,8 +86,8 @@ const Chart = (props) => {
                         </li>
                 </ul>
                 <h2 className="over in"
-                    style={{ fontSize: `1.25em`, lineHeight: 1.2, textAlign: `center`, padding: `1em 0.5em 0` }}>Learn what you can do to improve your results.</h2>
-                <a className="cta over in" href="#" target="_blank">Contact an expert</a>
+                    style={{ fontSize: `1.25em`, lineHeight: 1.2, textAlign: `center`, padding: `1em 0.5em 0` }}>Learn what you can do to improve your APM</h2>
+                <a className="cta over in" href="#" target="_blank">Contact an AVEVA expert</a>
                 <div id={'underlay'} className={'u' + props.bracket} />
             </div>
         </div>

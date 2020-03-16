@@ -8,6 +8,7 @@ import Progress from "../components/progress.js"
 import Answer from "../components/answer.js"
 import Content from "../content/content.json";
 import BottomNav from "../components/bottomNav.js"
+import Alert from "../components/alert.js";
 
 
 class Assessment extends Component {
@@ -61,6 +62,18 @@ class Assessment extends Component {
         window.scrollTo({ top: 0, behavior: "smooth" })
     }
 
+    handleNavButton = (dir, e) => {
+        if (dir === 'n' && this.state.isActive == !false) {
+            this.handleScrollTop(e);
+            this.setState({
+                error: true
+            })
+            console.log('Error true')
+        } else {
+            this.handleNav(dir, e)
+        }
+    }
+
     handleNav = (dir, e) => {
         let currentQuestion = this.state.question;
         let back = currentQuestion - 1;
@@ -70,7 +83,9 @@ class Assessment extends Component {
             this.setState({
                 question: back,
                 progress: this.calcPercentage(currentQuestion - 1, 15),
-                checked: null
+                checked: null,
+                isActive: !false,
+                error: false
             })
         } else if (dir === 'n' && next < 15) {
             this.setState({
@@ -79,7 +94,8 @@ class Assessment extends Component {
                 isActive: !false,
                 total: this.state.score.reduce(function (a, b) { return a + b; }, 0),
                 result: this.handleResult(),
-                checked: null
+                checked: null,
+                error: false
             })
         } else {
             return (false);
@@ -99,10 +115,11 @@ class Assessment extends Component {
                             <div className="col-sm-12 col-md-3 left" />
                             <div className="col-sm-12 col-md-9 right">
                                 <p className="question">{Q.question}</p>
+                                {this.state.error === true ? <Alert /> : null}
                                 {Q.answers.map((answer, index) => (
                                     <Answer key={index} radioid={this.state.question + '-' + index} value={answer.val} text={answer.text} selected={this.handleAnswer} checked={this.state.checked} name={'question-' + this.state.question} />
                                 ))}
-                                <BottomNav question={this.state.question} handleNav={this.handleNav} result={Math.round((this.state.total / 60) * 100)} content={this.state.result} active={this.state.isActive} />
+                                <BottomNav question={this.state.question} handleNav={this.handleNavButton} result={Math.round((this.state.total / 60) * 100)} content={this.state.result} active={this.state.isActive} />
                             </div>
                         </div>
                     </div>

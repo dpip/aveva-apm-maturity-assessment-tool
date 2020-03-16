@@ -1,0 +1,15 @@
+.alert {
+    display: block;
+    color: $red-alert;
+    border-left: 2px solid #DC0A0A !important;
+    max-width: max-content;
+    background-color: $white;
+    line-height: normal;
+    font-weight: 400;
+    padding: 11px 11px;
+    @include character(muli, 16px, regular);
+    text-decoration: none;
+    cursor: not-allowed;
+    transition: all .15s ease-in-out;
+    margin-bottom: 30px;
+}

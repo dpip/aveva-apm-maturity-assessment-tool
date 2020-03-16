@@ -1,10 +1,10 @@
 import React from "react"
 import "../assets/scss/main.scss"
 import { Link } from "gatsby"
+
 export default (props) =>
 
     <nav>
-        {console.log('props from bottomNav', props.content)}
         {props.question === 0 ?
             <Link
                 to={'/'}
@@ -32,8 +32,8 @@ export default (props) =>
                 </Link>
                 :
                 <button
-                    className="cta"
-                    disabled={props.active}
+                    className={'cta ' + 'disabled-' + props.active}
+                    // disabled={props.active}
                     onClick={e => props.handleNav('n')}>
                     Next
                 </button>
