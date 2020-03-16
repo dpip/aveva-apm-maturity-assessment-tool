@@ -11,7 +11,7 @@
 
 
 /* RADIO BUTTON STLYING BEGINS */
-$theme-color: $medium-purple;
+$theme-color: $blue;
 
 .radio {
     display: flex;
@@ -53,7 +53,7 @@ $theme-color: $medium-purple;
     }
     &::before{
       background-color: #FFFFFF;
-      border: 2px solid #DCDCDC;
+      border: 2px solid $black;
     //   top: 4px; left: 10px;
       transition: all .5s;
       cursor: pointer;
@@ -85,10 +85,10 @@ $theme-color: $medium-purple;
   &__input:checked ~ &__label {
     &::before{
       background-color: #FFFFFF;
-      border: 2px solid $theme-color;
+      border: 2px solid $black;
     }
     &::after{
-      background-color: $theme-color;
+      background-color: $black;
       border: 2px solid transparent;
     //   top: 4px; left: 10px;
       transform: scale(0.6);

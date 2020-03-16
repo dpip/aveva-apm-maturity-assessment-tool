@@ -2,7 +2,7 @@ import React from "react"
 import "../assets/scss/main.scss"
 export default (props) =>
 
-    <div class="radio">
+    <div className="radio">
         <input
             type="radio"
             name={`${props.radioid}`}

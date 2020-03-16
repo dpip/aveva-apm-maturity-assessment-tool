@@ -1,6 +1,8 @@
 import React, { Component } from "react"
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import "../assets/scss/main.scss"
+
 import Layout from "../components/layout.js"
 import Progress from "../components/progress.js"
 import Answer from "../components/answer.js"
@@ -47,19 +49,23 @@ class Assessment extends Component {
             return 0;
         } else if (result >= 16 && result <= 25) {
             return 1;
-        } else if (result >= 26 && result <= 40) {
+        } else if (result >= 26 && result <= 45) {
             return 2;
-        } else if (result >= 41 && result <= 60) {
+        } else if (result >= 46 && result <= 60) {
             return 3;
         }
 
     }
 
-    handleNav = (dir) => {
+    handleScrollTop = (e) => {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    handleNav = (dir, e) => {
         let currentQuestion = this.state.question;
         let back = currentQuestion - 1;
         let next = currentQuestion + 1;
-
+        this.handleScrollTop(e);
         if (dir === 'b' && currentQuestion > 0) {
             this.setState({
                 question: back,
@@ -88,7 +94,7 @@ class Assessment extends Component {
             <Layout>
                 <Progress fill={this.state.progress} />
                 <article className="container--assessment">
-                    <div className="container">
+                    <div id="test" className="container">
                         <div className="row">
                             <div className="col-sm-12 col-md-3 left" />
                             <div className="col-sm-12 col-md-9 right">

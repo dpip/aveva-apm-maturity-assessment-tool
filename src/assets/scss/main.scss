@@ -11,20 +11,24 @@
 @import "./question";
 @import "./progress";
 @import "./results";
+@import "./form";
 
 .cta {
     display: block;
     color: $white;
-    background-color: $red;
+    background-color: $blue;
     max-width: max-content;
-    padding: 10px 15px;
+    background-color: #4d5ee0;
+    line-height: normal;
+    font-weight: 400;
+    padding: 11px 25px;
     @include character(muli, 16px, regular);
     text-decoration: none;
     cursor: pointer;
     border:none;
     transition: all .15s ease-in-out;
     &:hover {
-      background-color: $medium-purple;
+      background-color: $blue-hover;
       color: $white !important;
     }
     &:focus {
@@ -32,12 +36,13 @@
     }
     &.back {
       background-color: inherit;
-      border: 2px solid $red;
-      color: $red;
+      border: 2px solid $blue;
+      color: $blue;
       margin-right: 10px;
       &:hover {
-        border: 2px solid $medium-purple;
-        color: $medium-purple !important;
+        border: 2px solid $blue-hover;
+        background-color: $blue-hover;
+        color: white !important;
       }
     }
 }

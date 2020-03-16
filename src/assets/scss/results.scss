@@ -193,24 +193,17 @@
       font-weight: lighter;
     }
   }
-  @keyframes contentFade {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-  }
-  @keyframes contentFadeup {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-  }
 
 }
+
+    .results-body {
+        opacity: 0;
+        transform: translateY(0px);
+        animation-name: contentFadeup;
+        animation-delay: 2.5s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
 
 
         .in {
@@ -221,6 +214,15 @@
             animation-duration: 1s;
             animation-fill-mode: forwards;
         }
+        @keyframes contentFade {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
         @keyframes contentFadeup {
             0% {
                 opacity: 0;

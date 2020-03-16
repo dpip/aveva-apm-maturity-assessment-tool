@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout.js"
 import Results from "../content/results.json";
 import Chart from "../components/resultAnimation";
-import Background from "../assets/images/parallax-bg-0.jpg"
+import Background from "../assets/images/resultsbg.png"
 import "../assets/scss/main.scss"
 
 const getParameterByName = (name) => {
@@ -27,9 +27,9 @@ export default ({ location }) =>
                     <div className="col-sm-12 col-md-8 right">
 
                         {(location.state && location.state.resultcontent) ?
-                            <div style={{ color: '#fff' }} dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }} />
+                            <div className="results-body" style={{ color: '#fff' }} dangerouslySetInnerHTML={{ __html: Results.results[location.state.resultcontent] }} />
                             :
-                            <div style={{ color: '#fff' }} dangerouslySetInnerHTML={{ __html: Results.results[Number(getParameterByName('Content'))] }} />
+                            <div className="results-body" style={{ color: '#fff' }} dangerouslySetInnerHTML={{ __html: Results.results[Number(getParameterByName('Content'))] }} />
                         }
                     </div>
                 </div>

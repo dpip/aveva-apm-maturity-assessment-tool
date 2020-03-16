@@ -1,6 +1,7 @@
 import React from "react"
 import "../assets/scss/main.scss"
 import { Link } from "gatsby"
+import Form from "../components/form.js"
 import Background from "../assets/images/parallax-bg-0.jpg"
 import Layout from "../components/layout.js";
 
@@ -14,10 +15,10 @@ export default () =>
                         <h2>Take your free<br /> 15-minute strategy<br /> assessment now</h2>
                         <span className="rule"></span>
                         <br />
-                        <p style={{ color: "#ffff" }}>There's no such thing as a one-size-fits-all Asset Performance Management strategy</p>
+                        <p style={{ color: "#ffff" }}>There's no such thing as a one-size-fits-all Asset Performance Management strategy.</p>
                     </div>
                     <div className="col-sm-12 col-md-6 right">
-                        <p>Form code TBD</p>
+                        <Form />
                         <Link className="cta" to="/assessment/">Take the assessment</Link>
                     </div>
                 </div>
