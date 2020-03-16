@@ -15,21 +15,19 @@ export default (props) =>
             </button>
         }
         {
-            props.question === 14 ?
+            props.question === 14 && props.active === false ?
                 <Link
                     to={'/results' + `?Result=${props.result}&Content=${props.content}`}
                     state={{ result: props.result, resultcontent: props.content }}
-                    className="cta"
-                    disabled={props.active}
+                    className={'cta ' + 'disabled-' + props.active}
                     onClick={e => props.handleNav('n')}>
                     Results
                 </Link>
                 :
                 <button
                     className={'cta ' + 'disabled-' + props.active}
-                    // disabled={props.active}
                     onClick={e => props.handleNav('n')}>
-                    Next
+                    {props.question === 14 ? 'Results' : 'Next'}
                 </button>
         }
     </nav>

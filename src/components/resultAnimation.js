@@ -17,30 +17,31 @@ const Chart = (props) => {
         <div className="result-animation">
             <div className="result-pie">
                 <svg viewBox="0 0 20 20">
+                    <title>{`A visual representation of your percentage score on AVEVA's Asset Performance Management Maturity Assessment for industrial businesses which was ${props.result} percent`}</title>
                     <defs>
                         <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#f70656" />
-                            <stop offset={`${strokeResult}`} stop-color="#ffbc00" />
+                            <stop offset="0%" stopColor="#f70656" />
+                            <stop offset={`${strokeResult}`} stopColor="#ffbc00" />
                         </linearGradient>
                     </defs>
                     <circle r="10" cx="10" cy="10" fill="#3D1152" />
                     <circle r="9.75" cx="10" cy="10"
                         fill="transparent"
                         stroke="#fff"
-                        stroke-width="0.25"
+                        strokeWidth="0.25"
                     />
                     <circle r="5" cx="10" cy="10"
                         fill="transparent"
                         stroke="rgba(0, 0, 0, 0.4)"
-                        stroke-width="10"
-                        stroke-dasharray={`${result} 31.4`}
+                        strokeWidth="10"
+                        strokeDasharray={`${result} 31.4`}
                         transform="rotate(-90)"
                     />
                     <circle r="9.75" cx="10" cy="10"
                         fill="transparent"
                         stroke="url(#gradient)"
-                        stroke-width="0.25"
-                        stroke-dasharray={`${strokeResult} 61.23`}
+                        strokeWidth="0.25"
+                        strokeDasharray={`${strokeResult} 61.23`}
                         transform="rotate(-90)"
                     />
                 </svg>
