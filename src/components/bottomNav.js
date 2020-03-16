@@ -6,13 +6,7 @@ export default (props) =>
 
     <nav>
         {props.question === 0 ?
-            <Link
-                to={'/'}
-                className="cta back"
-                disabled={props.active}
-                onClick={e => props.handleNav('b')}>
-                Intro
-            </Link>
+            null
             :
             <button
                 className="cta back"
