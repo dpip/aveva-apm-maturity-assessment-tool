@@ -289,6 +289,7 @@ article {
   overflow: hidden;
     background-color: $white;
     padding-top: 60px;
+    padding-bottom: 60px;
     @include media-breakpoint-down(xs) {
       padding-top: 50px;
     }
@@ -310,7 +311,7 @@ article {
       p {
          @include article-heading-max-width;
         @include media-breakpoint-down(xs) {
-          line-height: 40px;
+          // line-height: 40px;
         }
       }
       .rule {
