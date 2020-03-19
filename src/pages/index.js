@@ -8,7 +8,7 @@ import Layout from "../components/layout.js";
 export default () =>
     <Layout>
         <article data-jarallax data-element-in-viewport='#article-2' className="article jarallax">
-            <img alt="Slide 0 Background Image" className="jarallax-img" src={Background} />
+            {/* <img alt="Slide 0 Background Image" className="jarallax-img" src={Background} /> */}
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12 col-md-6 left">

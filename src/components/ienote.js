@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import "../assets/scss/main.scss"
+import { isIE, isChrome } from 'react-device-detect';
+
 
 class IENote extends Component {
     constructor(props) {
@@ -10,11 +12,8 @@ class IENote extends Component {
     }
 
     componentDidMount() {
-        alert('mounted');
-        const isEdge = window.navigator.userAgent.indexOf('Edge') != -1
-        const isIE = window.navigator.userAgent.indexOf('Trident') != -1 && !isEdge
         this.setState({
-            open: !isIE ? false : true
+            open: isIE
         })
     }
 
@@ -25,7 +24,6 @@ class IENote extends Component {
     }
 
     render() {
-        console.log('isIE?', this.state.ie)
         return (
             <>
                 {this.state.open === true ?
