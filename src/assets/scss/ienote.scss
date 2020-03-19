@@ -1,0 +1,33 @@
+#ie-note {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: $yellow;
+    text-align: center;
+    padding: 15px 0px 15px 0px;
+    line-height: 2.5;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px #000;
+    -moz-box-shadow:    0 0 5px #000;
+    box-shadow:         0 0 5px #000;
+    #close-warning {
+        position: absolute;
+        right: 60px;
+        cursor: pointer;
+        // padding: 20px;
+        height: 24px;
+        width: 24px;
+        border-radius: 100%;
+        transition: all .25s ease-in-out;
+        &:hover{
+            background-color: $yellow;
+            transform: scale(1.25);
+        }
+    }
+}

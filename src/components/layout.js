@@ -1,7 +1,11 @@
 import React from "react"
 import Header from "../components/header.js";
+import IENote from "../components/ienote.js";
 import Footer from "../components/footer.js";
 import { Helmet } from "react-helmet";
+
+const isIE = false || !!document.documentMode;
+
 export default ({ children }) => (
     <>
         <Helmet>
@@ -46,6 +50,7 @@ export default ({ children }) => (
             <script src="https://sw.aveva.com/hubfs/js-2018/app.bundle.js"></script>
         </Helmet>
         <Header />
+        {!isIE ? null : <IENote open={isIE} />}
         {children}
         <Footer />
     </>
