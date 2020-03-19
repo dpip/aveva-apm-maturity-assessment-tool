@@ -5,8 +5,17 @@ class IENote extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            open: props.open
+            open: false
         }
+    }
+
+    componentDidMount() {
+        alert('mounted');
+        const isEdge = window.navigator.userAgent.indexOf('Edge') != -1
+        const isIE = window.navigator.userAgent.indexOf('Trident') != -1 && !isEdge
+        this.setState({
+            open: !isIE ? false : true
+        })
     }
 
     closeWarning = (e) => {
@@ -16,6 +25,7 @@ class IENote extends Component {
     }
 
     render() {
+        console.log('isIE?', this.state.ie)
         return (
             <>
                 {this.state.open === true ?

@@ -4,7 +4,9 @@ import IENote from "../components/ienote.js";
 import Footer from "../components/footer.js";
 import { Helmet } from "react-helmet";
 
-const isIE = false || !!document.documentMode;
+
+const isEdge = window.navigator.userAgent.indexOf('Edge') != -1
+const isIE = window.navigator.userAgent.indexOf('Trident') != -1 && !isEdge
 
 export default ({ children }) => (
     <>
@@ -50,7 +52,8 @@ export default ({ children }) => (
             <script src="https://sw.aveva.com/hubfs/js-2018/app.bundle.js"></script>
         </Helmet>
         <Header />
-        {!isIE ? null : <IENote open={isIE} />}
+        {/* {!isIE ? null : <IENote open={isIE} />} */}
+        <IENote open={isIE} />
         {children}
         <Footer />
     </>
