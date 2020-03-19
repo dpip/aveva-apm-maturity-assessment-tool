@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import "../assets/scss/main.scss"
-import { isIE, isChrome } from 'react-device-detect';
+import { isIE } from 'react-device-detect';
 
 
 class IENote extends Component {
@@ -11,11 +11,11 @@ class IENote extends Component {
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            open: isIE
-        })
-    }
+    // componentDidMount() {
+    //     this.setState({
+    //         open: isIE
+    //     })
+    // }
 
     closeWarning = (e) => {
         this.setState({
@@ -26,7 +26,7 @@ class IENote extends Component {
     render() {
         return (
             <>
-                {this.state.open === true ?
+                {this.state.open === false ?
                     <nav id={'ie-note'}>
                         <svg id={'icon-warning'} title={'warning-icon'} xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none" /><path fill={'#F5A624'} d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" /></svg>
                         <span>&nbsp;&nbsp;&nbsp;This assessment is best viewed with Firefox or Chrome.</span>
